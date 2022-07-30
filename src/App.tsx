@@ -1,17 +1,12 @@
 import './App.css';
 import AppRoutes from './routes';
-import { setAuthToken } from './utils';
+import { LoginProvider } from './utils/context/user/provider';
 
 function App() {
-  const token = localStorage.getItem("token");
-  if (token) {
-    setAuthToken(token);
-  }
-
   return (
-    <div className="App">
+    <LoginProvider>
       <AppRoutes />
-    </div>
+    </LoginProvider>
   );
 }
 
