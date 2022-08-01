@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from "../pages";
-import LoginPage from "../pages/login";
+import LoginModule from '../pages/LoginModule';
+import Home from '../pages/Home';
 
 const AppRoutes = () => {
     return (
@@ -13,7 +13,7 @@ const AppRoutes = () => {
                 />
                 <Route
                     path="login"
-                    element={<LoginPage/>}
+                    element={<LoginModule/>}
                 />
             </Routes>
        </> 

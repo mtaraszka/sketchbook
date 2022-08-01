@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { setAuthToken } from "../../functions/setAuthToken";
-import { singin } from "../../functions/singin";
+import { singinViaToken } from "../../api/signinViaToken";
+import { User } from "../../types/user/interfaces";
 import { UserContext } from "./context";
-import { User } from "./interface";
 
 export const LoginProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
@@ -11,8 +10,7 @@ export const LoginProvider: React.FunctionComponent<{ children: React.ReactNode 
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (token) {
-            setAuthToken(token);
-            singin().then((user) => setUser(user));
+            singinViaToken(token).then((user) => setUser(user));
         };
     }, [])
 
