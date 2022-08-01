@@ -1,9 +1,14 @@
-import React, { Dispatch, SetStateAction } from "react";
-import { User } from "./interface";
+import React from "react";
+import { UserContextInterface } from "./interface";
 
-interface UserContextInterface {
-    user: User,
-    setUser: Dispatch<SetStateAction<User>>,
-}
-
-export const UserContext = React.createContext<UserContextInterface | null>(null);
+export const UserContext = React.createContext<UserContextInterface>({
+    user: {
+        data: {
+            id: '',
+            name: '',
+            email: '',
+        },
+        loggedIn: false
+    },
+    setUser: () => { }
+});
