@@ -1,20 +1,17 @@
 import { Formik, Form } from "formik";
 import { useContext } from "react";
-import { singin } from "../../../../api/signin";
-import { UserContext } from "../../../../store/user/context";
+
+import { singin } from "services/signin";
+import { UserContext } from "store/user/context";
+import { initialValues } from "./login.constants";
 
 interface LoginValues {
     email: string,
     password: string
 }
 
-const LoginForm = () => {
+export const LoginForm = () => {
     const { setUser } = useContext(UserContext);
-
-    const initialValues = {
-        email: 'test@test.pl',
-        password: 'password',
-    }
 
     const onSubmit = ({ email, password }: LoginValues) => {
         singin(email, password).then(user => setUser(user))
@@ -28,5 +25,3 @@ const LoginForm = () => {
         </Formik>
     )
 }
-
-export default LoginForm;

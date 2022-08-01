@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import { deleteAuthToken } from "../utils/deleteAuthToken";
-import { setAuthToken } from "../utils/setAuthToken";
+import { deleteAuthToken } from "utils/deleteAuthToken";
+import { setAuthToken } from "utils/setAuthToken";
 
 export const singin = async (email: string, password: string) => {
     return axios.post('http://localhost:4200/login', {

@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import LoginForm from "../../components/modules/forms/LoginForm";
-import { UserContext } from "../../store/user/context";
-import { deleteAuthToken } from "../../utils/deleteAuthToken";
+import { UserContext } from "store/user/context";
+import { deleteAuthToken } from "utils/deleteAuthToken";
+import { LoginForm } from "components/modules/forms/LoginForm";
 
 const LoginModule = () => {
     const { user, setUser } = useContext(UserContext);

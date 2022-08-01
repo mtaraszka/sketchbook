@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { singinViaToken } from "../../api/signinViaToken";
-import { User } from "../../types/user/interfaces";
+
+import { singinViaToken } from "services/signinViaToken";
+import { User } from "types/user/interfaces";
 import { UserContext } from "./context";
 
 export const LoginProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({ children }) => {
