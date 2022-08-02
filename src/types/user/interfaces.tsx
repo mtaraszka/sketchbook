@@ -1,4 +1,9 @@
-import { UserData } from "./types";
+type UserData = {
+    id: string,
+    name: string,
+    email: string,
+}
+
 
 export interface User {
     data: UserData,

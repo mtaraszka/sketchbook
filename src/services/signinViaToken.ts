@@ -6,7 +6,7 @@ import { setAuthToken } from "utils/setAuthToken";
 export const singinViaToken = async (token: string) => {
     setAuthToken(token);
 
-    return axios.post('http://localhost:4200/login', {
+    return axios.post('/login', {
     }).then(res => ({
         data: res.data.user,
         loggedIn: true,

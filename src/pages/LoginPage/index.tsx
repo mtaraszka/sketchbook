@@ -3,7 +3,7 @@ import { UserContext } from "store/user/context";
 import { deleteAuthToken } from "utils/deleteAuthToken";
 import { LoginForm } from "components/modules/forms/LoginForm";
 
-const LoginModule = () => {
+const LoginPage = () => {
     const { user, setUser } = useContext(UserContext);
 
     return (
@@ -23,4 +23,4 @@ const LoginModule = () => {
     )
 }
 
-export default LoginModule;
+export default LoginPage;

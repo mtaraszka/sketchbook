@@ -1,4 +1,5 @@
 import './App.css';
+import 'axios/global';
 import AppRoutes from './routes';
 import { LoginProvider } from './store/user/provider';
 
