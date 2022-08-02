@@ -1,4 +1,5 @@
 import React from "react";
+
 import { UserContextInterface } from "./interface";
 
 export const UserContext = React.createContext<UserContextInterface>({
