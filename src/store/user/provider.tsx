@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { setAuthToken } from "../../functions/setAuthToken";
-import { singin } from "../../functions/singin";
+
+import { singinViaToken } from "services/signinViaToken";
+import { User } from "types/user/interfaces";
+import { getItemFromLocalStorage } from "utils/localStorageOperations";
+
 import { UserContext } from "./context";
-import { User } from "./interface";
 
 export const LoginProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
     const value = { user, setUser };
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        const token = getItemFromLocalStorage('token');
         if (token) {
-            setAuthToken(token);
-            singin().then((user) => setUser(user));
+            singinViaToken(token).then((user) => setUser(user));
         };
     }, [])
 

@@ -1,6 +1,7 @@
 import './App.css';
+import 'services/api';
 import AppRoutes from './routes';
-import { LoginProvider } from './utils/context/user/provider';
+import { LoginProvider } from './store/user/provider';
 
 function App() {
   return (
