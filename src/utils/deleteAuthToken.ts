@@ -1,6 +1,7 @@
 import axios from "axios";
+import { deleteItemFromLocalStorage } from "./localStorageOperations";
 
 export const deleteAuthToken = () => {
-    localStorage.removeItem('token');
+    deleteItemFromLocalStorage('token')
     delete axios.defaults.headers.common["Authorization"];
 }

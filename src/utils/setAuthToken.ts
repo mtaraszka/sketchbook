@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { setItemInLocalStorage } from './localStorageOperations';
 
 export const setAuthToken = (token: string) => {
-    localStorage.setItem('token', token);
+    setItemInLocalStorage('token', token);
     axios.defaults.headers.common["Authorization"] = `JWT ${token}`;
 }

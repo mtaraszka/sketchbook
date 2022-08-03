@@ -7,8 +7,8 @@ export const singinViaToken = async (token: string) => {
     setAuthToken(token);
 
     return axios.post('/login', {
-    }).then(res => ({
-        data: res.data.user,
+    }).then(({ data }) => ({
+        data: data.user,
         loggedIn: true,
     })).catch(() => {
         deleteAuthToken();
