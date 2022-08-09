@@ -2,6 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 
 import Home from 'pages/Home';
 import LoginPage from 'pages/LoginPage';
+import AuthGuard from 'guards/authGuard';
+import RegisterPage from 'pages/RegisterPage';
+import LoggedInGuard from 'guards/loggedInGuard';
 
 const AppRoutes = () => {
     return (
@@ -9,11 +12,24 @@ const AppRoutes = () => {
             <Routes>
                 <Route 
                     path="/"
-                    element={<Home/>}
+                    element={
+                        <AuthGuard>
+                            <Home/>
+                        </AuthGuard>
+                    }
                 />
                 <Route
                     path="login"
-                    element={<LoginPage/>}
+                    element={
+                        <LoggedInGuard>
+                            <LoginPage/>
+                        </LoggedInGuard>
+                    }
+                />
+
+                <Route
+                    path="register"
+                    element={<RegisterPage/>}
                 />
             </Routes>
        </> 

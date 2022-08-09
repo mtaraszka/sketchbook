@@ -1,15 +1,21 @@
-import { initialValues } from "components/modules/forms/LoginForm/login.constants";
+import { initialLoginValues } from "components/modules/forms/Login/login.constants";
 import { useContext } from "react";
 import { singin } from "services/signin";
 import { UserContext } from "store/user/context";
-import { SignupInterface } from "types/user/interfaces";
+import { SigninInterface } from "types/user/interfaces";
+import { deleteAuthToken } from "utils/deleteAuthToken";
 
 export const useLogin = () => {
     const { setUser } = useContext(UserContext);
 
-    const onSubmit = ({ email, password }: SignupInterface) => {
+    const onSubmit = ({ email, password }: SigninInterface) => {
         singin(email, password).then(user => setUser(user));
     };
 
-    return { onSubmit, initialValues };
+    const logOut = () => {
+        deleteAuthToken();
+        setUser(null);
+    }
+
+    return { onSubmit, initialLoginValues, logOut };
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { singinViaToken } from "services/signinViaToken";
 import { User } from "types/user/interfaces";
-import { getItemFromLocalStorage } from "utils/localStorageOperations";
+import { getDataFromLocalStorage } from "utils/localStorageOperations";
 
 import { UserContext } from "./context";
 
@@ -11,7 +11,7 @@ export const LoginProvider: React.FunctionComponent<{ children: React.ReactNode 
     const value = { user, setUser };
 
     useEffect(() => {
-        const token = getItemFromLocalStorage('token');
+        const token = getDataFromLocalStorage('token');
         if (token) {
             singinViaToken(token).then((user) => setUser(user));
         };
