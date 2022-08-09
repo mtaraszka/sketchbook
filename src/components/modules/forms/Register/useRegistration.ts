@@ -1,4 +1,4 @@
-import { initialRegistrationValues } from "components/modules/forms/registerForm/register.constants"
+import { initialRegistrationValues } from "components/modules/forms/Register/register.constants"
 import { useNavigate } from "react-router-dom"
 import { singup } from "services/signup"
 import { SignupInterface } from "types/user/interfaces"

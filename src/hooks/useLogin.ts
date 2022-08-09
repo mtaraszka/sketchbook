@@ -1,4 +1,4 @@
-import { initialLoginValues } from "components/modules/forms/LoginForm/login.constants";
+import { initialLoginValues } from "components/modules/forms/Login/login.constants";
 import { useContext } from "react";
 import { singin } from "services/signin";
 import { UserContext } from "store/user/context";

@@ -1,3 +1,4 @@
+import { PublishAssetsForm } from "components/modules/forms/PublishAssets";
 import { useLogin } from "hooks/useLogin";
 import { useContext } from "react";
 import { UserContext } from "store/user/context";
@@ -12,6 +13,8 @@ const Home = () => {
             <button onClick={logOut}>
                 Logout
             </button>
+
+            <PublishAssetsForm />
         </div>
     )
 }
