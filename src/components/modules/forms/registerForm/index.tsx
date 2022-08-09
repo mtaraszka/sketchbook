@@ -1,5 +1,5 @@
 import { Formik, Form, Field } from "formik";
-import { useRegistration } from "hooks/useRegistration";
+import { useRegistration } from "components/modules/forms/registerForm/useRegistration";
 
 export const RegisterForm = () => {
     const { onSubmit, initialRegistrationValues } = useRegistration();

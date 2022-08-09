@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { singin } from "services/signin";
 import { UserContext } from "store/user/context";
 import { SigninInterface } from "types/user/interfaces";
+import { deleteAuthToken } from "utils/deleteAuthToken";
 
 export const useLogin = () => {
     const { setUser } = useContext(UserContext);
@@ -11,5 +12,10 @@ export const useLogin = () => {
         singin(email, password).then(user => setUser(user));
     };
 
-    return { onSubmit, initialLoginValues };
+    const logOut = () => {
+        deleteAuthToken();
+        setUser(null);
+    }
+
+    return { onSubmit, initialLoginValues, logOut };
 };

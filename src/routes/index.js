@@ -4,6 +4,7 @@ import Home from 'pages/Home';
 import LoginPage from 'pages/LoginPage';
 import AuthGuard from 'guards/authGuard';
 import RegisterPage from 'pages/RegisterPage';
+import LoggedInGuard from 'guards/loggedInGuard';
 
 const AppRoutes = () => {
     return (
@@ -19,7 +20,11 @@ const AppRoutes = () => {
                 />
                 <Route
                     path="login"
-                    element={<LoginPage/>}
+                    element={
+                        <LoggedInGuard>
+                            <LoginPage/>
+                        </LoggedInGuard>
+                    }
                 />
 
                 <Route

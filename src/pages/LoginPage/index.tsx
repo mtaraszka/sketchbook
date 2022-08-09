@@ -11,12 +11,6 @@ const LoginPage = () => {
         <div>
             <h1>Welcome to login page {user?.data.name}</h1>
             <LoginForm />
-            {/* <button onClick={() => {
-                deleteAuthToken();
-                setUser(null);
-            }}>
-                Logout
-            </button> */}
             <button onClick={() => navigate('/register')}>Register</button>
         </div>
     )
